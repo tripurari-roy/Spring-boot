@@ -39,7 +39,12 @@ public class BasicController {
 
    @GetMapping("/subtract")
    public ApiResult subtract(@RequestParam BigDecimal minuent, @RequestParam BigDecimal subtrahend) {
-      return getResult(minuent.subtract(subtrahend));
+	   logger.trace("A TRACE Message");
+       logger.debug("A DEBUG Message");
+       logger.info("An INFO Message");
+       logger.warn("A WARN Message");
+       logger.error("An ERROR Message");
+	   return getResult(minuent.subtract(subtrahend));
    }
 
    @GetMapping("/multiply")
