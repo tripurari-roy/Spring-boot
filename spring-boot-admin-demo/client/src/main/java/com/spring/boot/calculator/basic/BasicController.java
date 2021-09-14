@@ -49,7 +49,12 @@ public class BasicController {
 
    @GetMapping("/multiply")
    public ApiResult multiply(@RequestParam BigDecimal multiplier, @RequestParam BigDecimal multiplicand) {
-      return getResult(multiplier.multiply(multiplicand));
+	   logger.trace("A TRACE Message");
+       logger.debug("A DEBUG Message");
+       logger.info("An INFO Message");
+       logger.warn("A WARN Message");
+       logger.error("An ERROR Message");
+	   return getResult(multiplier.multiply(multiplicand));
    }
 
    @GetMapping("/divide")
